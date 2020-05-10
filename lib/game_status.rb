@@ -33,7 +33,7 @@ def full?(board)
 end
 
 def draw?(board)
-  !won?(board) or board.count{|c| c == "O" or c == "X"} == 9
+  won?(board) or board.count{|c| c == "O" or c == "X"} == 9
 end
 
 def over?(board)
