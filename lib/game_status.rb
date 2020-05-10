@@ -32,5 +32,15 @@ end
 def draw?(board)
   if board.count{|c| c == "O" or c == "X"} == 9
     return true
-  return !(WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'} or WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'})
+  # Check for top row win
+  if WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'}
+    return false
+  if WIN_COMBINATIONS[0].all?{|index| board[index] == 'O'}
+    return false
 end
+
+
+
+
+
+
