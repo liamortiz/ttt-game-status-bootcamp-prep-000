@@ -42,6 +42,7 @@ def over?(board)
 end
 
 def winner(board)
+  board[won?(board)
   player = won?(board)
   if player
     return board[player[0]]
