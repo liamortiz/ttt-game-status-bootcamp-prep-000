@@ -18,7 +18,6 @@ def won?(board)
   if !board.any?{|c| c == "X" || c == "Y"}
     return false
   end
-  
   # Check for winners
   WIN_COMBINATIONS.select{|row| row.all?{|index| position_taken?(board, index)}}.each do |row|
     if row.all?{|index| board[index] == 'X'} or row.all?{|index| board[index] == 'O'}
@@ -34,12 +33,7 @@ def full?(board)
 end
 
 def draw?(board)
-  # Draw
-  if won?(board)
-    return false
-  elsif board.count{|c| c == "O" or c == "X"} == 9
-    return true
-  end
+  !won?(board) or board.count{|c| c == "O" or c == "X"} == 9
 end
 
 def over?(board)
