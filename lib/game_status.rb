@@ -26,7 +26,7 @@ def won?(board)
     end
   end
   # No winners ? must be draw
-  nil
+  false
 end
 
 def full?(board)
@@ -34,7 +34,7 @@ def full?(board)
 end
 
 def draw?(board)
-  (board.count{|c| c == "O" or c == "X"} == 9) or !won?(board)
+  (board.count{|c| c == "O" or c == "X"} == 9) or won?(board)
 end
 
 def over?(board)
