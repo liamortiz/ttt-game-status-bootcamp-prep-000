@@ -30,5 +30,5 @@ def full?(board)
 end
 
 def draw?(board)
-  return (not won?(board) or (board.count{|c| c == "O" or c == "X"} == 9))
+  return (won?(board) or (board.count{|c| c == "O" or c == "X"} == 9))
 end
