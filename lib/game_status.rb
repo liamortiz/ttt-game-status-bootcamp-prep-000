@@ -36,8 +36,10 @@ def draw?(board)
   # Check for top row win
   if WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'}
     return false
+  end
   if WIN_COMBINATIONS[0].all?{|index| board[index] == 'O'}
     return false
+  end
 end
 
 
