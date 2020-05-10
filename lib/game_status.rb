@@ -20,7 +20,6 @@ def won?(board)
   
   WIN_COMBINATIONS.select{|row| row.all?{|index| position_taken?(board, index)}}.each do |row|
     if row.all?{|index| board[index] == 'X'} or row.all?{|index| board[index] == 'O'}
-      puts "YOU WON!"
       return row
     end
   end
