@@ -38,6 +38,7 @@ def draw?(board)
 end
 
 def over?(board)
+  (draw?(board) or won?(board))
 end
 
 
