@@ -14,7 +14,7 @@ WIN_COMBINATIONS = [[0, 1, 2], # Top row
                     [6, 4, 2]  # X2
                     ]
 def won?(board)
-  if !board.any?{|c| c == "X" || c == "Y"} or (board.count{|c| c == "O" or c == "X"} == 9)
+  if !board.any?{|c| c == "X" || c == "Y"} or draw?(board)
     return false
   end
   
