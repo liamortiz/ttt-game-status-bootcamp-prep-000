@@ -14,15 +14,19 @@ WIN_COMBINATIONS = [[0, 1, 2], # Top row
                     [2, 4, 6]  # X2
                     ]
 def won?(board)
-  if !board.any?{|c| c == "X" || c == "Y"} or draw?(board)
+  # Check empty board
+  if !board.any?{|c| c == "X" || c == "Y"}
     return false
   end
   
+  # Check for winners
   WIN_COMBINATIONS.select{|row| row.all?{|index| position_taken?(board, index)}}.each do |row|
     if row.all?{|index| board[index] == 'X'} or row.all?{|index| board[index] == 'O'}
       return row
     end
   end
+  # No winners ? must be draw
+  nil
 end
 
 def full?(board)
@@ -30,22 +34,10 @@ def full?(board)
 end
 
 def draw?(board)
-  if board.count{|c| c == "O" or c == "X"} == 9
-    return true
-  end
+  return board.count{|c| c == "O" or c == "X"} == 9 or won?(board)
 end
 
 def over?(board)
-  if draw?(board)
-    return true
-  end
-  x = won?(board)
-  if x
-    puts x
-    puts "Win"
-    return true
-  end
-  return false
 end
 
 
