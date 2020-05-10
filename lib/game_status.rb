@@ -11,7 +11,7 @@ WIN_COMBINATIONS = [[0, 1, 2], # Top row
                     [1, 4, 7], # Middle col
                     [2, 5, 8], # Right
                     [0, 4, 8], # X1
-                    [6, 4, 2]  # X2
+                    [2, 4, 6]  # X2
                     ]
 def won?(board)
   if !board.any?{|c| c == "X" || c == "Y"} or draw?(board)
