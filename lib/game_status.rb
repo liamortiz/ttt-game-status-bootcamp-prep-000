@@ -30,9 +30,7 @@ def full?(board)
 end
 
 def draw?(board)
-  if won?(board)
-    return false
-  elsif board.count{|c| c == "O" or c == "X"} == 9
+  if board.count{|c| c == "O" or c == "X"} == 9
     return true
-  end
+  if 
 end
