@@ -32,7 +32,7 @@ end
 def draw?(board)
   if won?(board)
     return false
-  elsif board.count{|c| c == "O" or c == "X"} == 9)
+  elsif board.count{|c| c == "O" or c == "X"} == 9
     return true
   end
 end
