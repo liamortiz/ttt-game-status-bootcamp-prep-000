@@ -32,5 +32,5 @@ end
 def draw?(board)
   if board.count{|c| c == "O" or c == "X"} == 9
     return true
-  if 
+  return !(WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'} or WIN_COMBINATIONS[0].all?{|index| board[index] == 'X'})
 end
