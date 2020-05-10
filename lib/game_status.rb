@@ -39,10 +39,13 @@ def over?(board)
   if draw?(board)
     return true
   end
-  if won?(board)
-    puts "YOU WON AGAIN!"
+  x = won?(board)
+  if x
+    puts x
+    puts "Win"
     return true
   end
+  return false
 end
 
 
